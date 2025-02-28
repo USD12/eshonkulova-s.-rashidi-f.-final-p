@@ -193,6 +193,9 @@ html {
   }
 }
 
+
+
+/*MAIN CSS STARTS HERE*/
 body::before {
   content: "";
   position: absolute;
@@ -488,7 +491,7 @@ span {
 .modal-content {
   position: relative;
   background-color: #1E2538;
-  margin: 15% auto;
+  margin: 20% auto;
   padding: 20px;
   width: 70%;
   max-width: 600px;
