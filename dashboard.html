@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Movie Dashboard</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="dashboard.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div id="login-container" class="login-container">
+    <div class="login-box">
+      <h2>Dashboard Login</h2>
+      <form id="login-form">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" required>
+        </div>
+        <button type="submit" class="btn-yellow">Login</button>
+      </form>
+      <p id="login-error" class="error-message"></p>
+    </div>
+  </div>
+
+  <div id="dashboard-container" class="dashboard-container" style="display: none;">
+    <header>
+      <nav>
+        <div class="logo-social">
+          <img src="Логотип.png" alt="Logo" class="logo">
+        </div>
+        <h1>Movie Dashboard</h1>
+        <div class="header-actions">
+          <button id="logout-btn" class="login-btn">Logout</button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="dashboard-controls">
+        <button id="add-movie-btn" class="btn-yellow">Add New Movie</button>
+      </div>
+
+      <div id="add-movie-form" class="modal-form" style="display: none;">
+        <div class="form-content">
+          <span class="close">&times;</span>
+          <h3>Add New Movie</h3>
+          <form id="movie-form">
+            <input type="text" class="form-input" id="movie-title" placeholder="Movie Title" required>
+            <input type="text" class="form-input" id="movie-genre" placeholder="Genre" required>
+            <input type="number" class="form-input" id="movie-rating" placeholder="Rating (0-10)" min="0" max="10" step="0.1" required>
+            <input type="text" class="form-input" id="movie-image" placeholder="Image URL" required>
+            <button type="submit" class="btn-yellow">Save Movie</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="dashboard-stats">
+        <div class="stat-card">
+          <h3>Total Movies</h3>
+          <p id="total-movies">0</p>
+        </div>
+        <div class="stat-card">
+          <h3>Average Rating</h3>
+          <p id="avg-rating">0</p>
+        </div>
+      </div>
+
+      <h2>Movie Collection</h2>
+      <div id="movie-grid" class="movie-grid dashboard-grid"></div>
+    </main>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
