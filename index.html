@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="logo-social">
+        <img src="Логотип.png" alt="Logo" class="logo">
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-vk"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      <ul>
+        <li><a href="#playbill">Афиша</a></li>
+        <li><a href="#movies">Фильмы</a></li>
+        <li><a href="#media">Медиа</a></li>
+        <li><a href="#actors">Актеры</a></li>
+        <li><a href="#news">Новости</a></li>
+        <li><a href="#compilations">Подборки</a></li>
+        <li><a href="#categories">Категории</a></li>
+        <li><a href="dashboard.html" class="dashboard-link">Dashboard</a></li>
+      </ul>
+      <div class="header-actions">
+        <div class="search-container">
+          <input type="text" class="search-input" placeholder="Поиск фильмов...">
+          <button class="search-btn"><i class="fas fa-search"></i></button>
+          <div class="search-results"></div>
+        </div>
+        <button class="login-btn">Войти</button>
+      </div>
+
+    <!-- Login Form -->
+    <div class="modal-form" id="loginForm">
+      <div class="form-content">
+        <span class="close">&times;</span>
+        <h4>Войти</h4>
+        <input type="text" class="form-input" placeholder="Логин, почта или телефон">
+        <input type="password" class="form-input" placeholder="Ваш пароль">
+        <button class="btn-yellow">Войти</button>
+        <button class="btn-violet" id="showRegister">Зарегистрироваться</button>
+        <a class="recover-link" id="showRecover">Восстановить пароль</a>
+        <div class="social-login">
+          <i class="fab fa-vk"></i>
+          <i class="fab fa-facebook"></i>
+          <i class="fab fa-google"></i>
+          <i class="fab fa-twitter"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Registration Form -->
+    <div class="modal-form" id="registerForm">
+      <div class="form-content">
+        <span class="close">&times;</span>
+        <p class="reg-text">Зарегистрироваться</p>
+        <input type="text" class="form-input" placeholder="Имя">
+        <input type="text" class="form-input" placeholder="Фамилия">
+        <input type="email" class="form-input" placeholder="Придумайте логин">
+        <input type="tel" class="form-input" placeholder="Придумайте пароль">
+        <input type="password" class="form-input" placeholder="Подтвердите пароль">
+        <input type="password" class="form-input" placeholder="Номер телефона или e-mail">
+        <div class="checkbox-container">
+          <label>
+            <input type="checkbox">
+            Соглашаюсь на условия<a href="link.html">политики конфиденциальности</a>
+          </label>
+          <label>
+            <input type="checkbox">
+            Соглашаюсь на обработку персональных данных
+          </label>
+        </div>
+        <button class="btn-yellow">Зарегистрироваться</button>
+      </div>
+    </div>
+
+    <!-- Password Recovery Form 1 -->
+    <div class="modal-form" id="recoverForm1">
+      <div class="form-content">
+        <span class="close">&times;</span>
+        <p class="recovpass-text">Восстановить пароль</p>
+        <input type="email" class="form-input" placeholder="Почта или номер телефона">
+        <div class="container-sendrecievebtn">
+        <button class="btn-send">Отправить</button>
+        <button class="btn-recieve">Получить код</button>
+        </div>
+        <button class="btn-yellow" id="showRecover2">Далее</button>
+      </div>
+    </div>
+
+    <!-- Password Recovery Form 2 -->
+    <div class="modal-form" id="recoverForm2">
+      <div class="form-content">
+        <span class="close">&times;</span>
+        <p class="recovpass-text">Восстановить пароль</p>
+        <input type="password" class="form-input" placeholder="Придумайте новый пароль">
+        <input type="password" class="form-input" placeholder="Подтвердите новый пароль">
+        <button class="btn-yellow">Готово</button>
+      </div>
+    </div>
+    </nav>
+  </header>
+  <main>
+    <div class="movie-section">
+      <h2 class="section-title">Сейчас в кино</h2>
+      <div class="separator-line"></div>
+      <ul class="categories-list">
+        <li><a href="#" class="active">Все</a></li>
+        <li><a href="#">Боевики</a></li>
+        <li><a href="#">Приключения</a></li>
+        <li><a href="#">Комедии</a></li>
+        <li><a href="#">Фантастика</a></li>
+        <li><a href="#">Триллеры</a></li>
+        <li><a href="#">Драма</a></li>
+      </ul>
+    </div>
+    <div class="movie-grid">
+      <!--ФИЛЬМ НОМЕР 1 ПЕРВОГО ЭКРАНА-->
+      <div class="movie-card">
+        <div class="rating-box">8.5</div>
+        <img src="images/Фото 1 сейчас в кино.png" alt="Movie 1">
+        <button class="movie-button">Карточка фильма</button>
+        <h3>Побег из Претории</h3>
+        <p>Триллер</p>
+      </div>
+      <div class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Побег из Претории</h2>
+          <span>Триллер</span> </br>
+          <p>Двое борцов за свободу отбывают срок в одной из самых строгих тюрем мира — в «Претории». Вместе с другими узниками они планируют дерзкий и опасный побег. Но придумать план — это только первый шаг. Шаг второй — реализация плана.</p>
+          <p><span>Год:</span> 1 августа 2020 г.</br>
+          <span>Режиссер:</span> Фрэнсис Аннан </br>
+          </p>
+          <button class="btn-modal"> Смотреть </button>
+          <button class="btn-modaltr"> Трейлер </button>
+        </div>
+      </div>
+      <!--ФИЛЬМ НОМЕР 2 ПЕРВОГО ЭКРАНА-->
+      <div class="movie-card">
+        <div class="rating-box">9.0</div>
+        <img src="images/Фото 2 сейчас в кино.png" alt="Movie 2">
+        <button class="movie-button">Карточка фильма</button>
+        <h3>Джокер</h3>
+        <p>Триллер, драма, криминал</p>
+      </div>
+      <div class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Джокер</h2>
+          <span>Триллер, драма, криминал</span> </br>
+          <p>Двое борцов за свободу отбывают срок в одной из самых строгих тюрем мира — в «Претории». Вместе с другими узниками они планируют дерзкий и опасный побег. Но придумать план — это только первый шаг. Шаг второй — реализация плана.</p>
+          <p><span>Год:</span> 1 августа 2020 г.</br>
+          <span>Режиссер:</span> Фрэнсис Аннан </br>
+          </p>
+          <button class="btn-modal"> Смотреть </button>
+          <button class="btn-modaltr"> Трейлер </button>
+        </div>
+      </div>
+
+      <!--ФИЛЬМ НОМЕР 3 ПЕРВОГО ЭКРАНА-->
+      <div class="movie-card">
+        <div class="rating-box">8.7</div>
+        <img src="images/Фото 3 сейчас в кино.png" alt="Movie 3">
+        <button class="movie-button">Карточка фильма</button>
+        <h3>Звёздные войны: Скайуокер. Восход</h3>
+        <p>Фантастика, фэнтези, боевик, приключения</p>
+      </div>
+      <div class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Звёздные войны: Скайуокер. Восход</h2>
+          <span>Фантастика, фэнтези, боевик, приключения</span> </br>
+          <p>Двое борцов за свободу отбывают срок в одной из самых строгих тюрем мира — в «Претории». Вместе с другими узниками они планируют дерзкий и опасный побег. Но придумать план — это только первый шаг. Шаг второй — реализация плана.</p>
+          <p><span>Год:</span> 1 августа 2020 г.</br>
+          <span>Режиссер:</span> Фрэнсис Аннан </br>
+          </p>
+          <button class="btn-modal"> Смотреть </button>
+          <button class="btn-modaltr"> Трейлер </button>
+        </div>
+      </div>
+      <!--ФИЛЬМ НОМЕР 4 ПЕРВОГО ЭКРАНА-->
+      <div class="movie-card">
+        <div class="rating-box">8.9</div>
+        <img src="images/Фото 4 сейчас в кино.png" alt="Movie 4">
+        <button class="movie-button">Карточка фильма</button>
+        <h3>Джентельмены</h3>
+        <p>Боевик, комедия, криминал</p>
+      </div>
+      <div class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Джентельмены</h2>
+          <span>Боевик, комедия, криминал</span> </br>
+          <p>Двое борцов за свободу отбывают срок в одной из самых строгих тюрем мира — в «Претории». Вместе с другими узниками они планируют дерзкий и опасный побег. Но придумать план — это только первый шаг. Шаг второй — реализация плана.</p>
+          <p><span>Год:</span> 1 августа 2020 г.</br>
+          <span>Режиссер:</span> Фрэнсис Аннан </br>
+          </p>
+          <button class="btn-modal"> Смотреть </button>
+          <button class="btn-modaltr"> Трейлер </button>
+        </div>
+      </div>
+      <!--ФИЛЬМ НОМЕР 5 ПЕРВОГО ЭКРАНА-->
+      <div class="movie-card">
+        <div class="rating-box">8.8</div>
+        <img src="images/Фото 5 сейчас в кино.png" alt="Movie 5">
+        <button class="movie-button">Карточка фильма</button>
+        <h3>Ford против Ferrari</h3>
+        <p>Биография, спорт, драма, боевик</p>
+      </div>
+      <div class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Ford против Ferrari</h2>
+          <span>Биография, спорт, драма, боевик</span> </br>
+          <p>Двое борцов за свободу отбывают срок в одной из самых строгих тюрем мира — в «Претории». Вместе с другими узниками они планируют дерзкий и опасный побег. Но придумать план — это только первый шаг. Шаг второй — реализация плана.</p>
+          <p><span>Год:</span> 1 августа 2020 г.</br>
+          <span>Режиссер:</span> Фрэнсис Аннан </br>
+          </p>
+          <button class="btn-modal"> Смотреть </button>
+          <button class="btn-modaltr"> Трейлер </button>
+        </div>
+      </div>
+      <!--ФИЛЬМ НОМЕР 6 ПЕРВОГО ЭКРАНА-->
+      <div class="movie-card">
+        <div class="rating-box">8.6</div>
+        <img src="images/Фото 6 сейчас в кино.png" alt="Movie 6">
+        <button class="movie-button">Карточка фильма</button>
+        <h3>3022</h3>
+        <p>Фантастика, триллер</p>
+      </div>
+      <div class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>3022</h2>
+          <span>Фантастика, триллер</span> </br>
+          <p>Двое борцов за свободу отбывают срок в одной из самых строгих тюрем мира — в «Претории». Вместе с другими узниками они планируют дерзкий и опасный побег. Но придумать план — это только первый шаг. Шаг второй — реализация плана.</p>
+          <p><span>Год:</span> 1 августа 2020 г.</br>
+          <span>Режиссер:</span> Фрэнсис Аннан </br>
+          </p>
+          <button class="btn-modal"> Смотреть </button>
+          <button class="btn-modaltr"> Трейлер </button>
+        </div>
+      </div>
+      <!--ФИЛЬМ НОМЕР 7 ПЕРВОГО ЭКРАНА-->
+      <div class="movie-card">
+        <div class="rating-box">8.4</div>
+        <img src="images/Фото 7 сейчас в кино.png" alt="Movie 7">
+        <button class="movie-button">Карточка фильма</button>
+        <h3>Хищные птицы: Потрясающая история Харли Квинн</h3>
+        <p>Боевик, криминал, комедия</p>
+      </div>
+      <div class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Хищные птицы:Потрясающая история Харли Квинн</h2>
+          <span>Боевик, криминал, комедия</span> </br>
+          <p>Двое борцов за свободу отбывают срок в одной из самых строгих тюрем мира — в «Претории». Вместе с другими узниками они планируют дерзкий и опасный побег. Но придумать план — это только первый шаг. Шаг второй — реализация плана.</p>
+          <p><span>Год:</span> 1 августа 2020 г.</br>
+          <span>Режиссер:</span> Фрэнсис Аннан </br>
+          </p>
+          <button class="btn-modal"> Смотреть </button>
+          <button class="btn-modaltr"> Трейлер </button>
+        </div>
+      </div>
+      <!--ФИЛЬМ НОМЕР 8 ПЕРВОГО ЭКРАНА-->
+      <div class="movie-card">
+        <div class="rating-box">8.3</div>
+        <img src="images/Фото 8 сейчас в кино.png" alt="Movie 8">
+        <button class="movie-button">Карточка фильма</button>
+        <h3>Плохие парни навсегда</h3>
+        <p>Боевик, комедия, криминал</p>
+        
+      </div>
+      <div class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Плохие парни навсегда</h2>
+          <span>Боевик, комедия, криминал</span> </br>
+          <p>Двое борцов за свободу отбывают срок в одной из самых строгих тюрем мира — в «Претории». Вместе с другими узниками они планируют дерзкий и опасный побег. Но придумать план — это только первый шаг. Шаг второй — реализация плана.</p>
+          <p><span>Год:</span> 1 августа 2020 г.</br>
+          <span>Режиссер:</span> Фрэнсис Аннан </br>
+          </p>
+          <button class="btn-modal"> Смотреть </button>
+          <button class="btn-modaltr"> Трейлер </button>
+        </div>
+      </div>
+
+      
+      <img src="images/Наверх.png" alt="up 1">
+      
+    </div>
+
+    <button class="btn-allnovelty">Все новинки</button>
+
+
+    <div class="trailer-section">
+      <h2 class="section-title">Новые трейлеры</h2>
+      <div class="separator-line"></div>
+      
+        <a href="#" class="active">Все трейлеры <img src="images/Arrow 1.png" alt="arrow 1"></a>
+    </div>
+    <div class="video-container">
+      <video width="1430" height="765" controls poster="images/Форсаж 9 заставка для видео.png">
+        <source src="movie.mp4" type="video/mp4">
+        <source src="movie.webm" type="video/webm">
+        Your browser does not support the video tag.
+    </video>
+    </div>
+    <div class="moviedescription-section">
+      <h2 class="section-title">Форсаж 9</h2>
+      <div class="logo-social">
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-vk"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      <div class="appraisal-box">
+       <div class="like"> <a href="#" class="active"> <img src="images/Лайк.png" alt="like"></a>
+       <p>3240</p></div>
+      <div class="dislike"><a href="#" class="active"><img src="images/Дисайк.png" alt="dislike"></a>
+        <p>420</p>
+      </div>
+    </div>
+    </div>
+
+    <div class="scroller"> 
+      <div class="video-containerlist">
+        <!--MOVIE LIST 1-8-->
+        <div class="movie-list">
+          <video controls poster="images/mulan.png">
+            <source src="movie.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <p class="descriptmovielist">Мулан</p>
+        </div>
+        
+        <div class="movie-list">
+          <video controls poster="images/Форсаж 9 заставка для видео.png">
+            <source src="movie.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <p class="descriptmovielist">Форсаж 9</p>
+        </div>
+        
+        <div class="movie-list">
+          <video controls poster="images/black w.png">
+            <source src="movie.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <p class="descriptmovielist">Черная вдова</p>
+        </div>
+        
+        <div class="movie-list">
+          <video controls poster="images/quiet place.png">
+            <source src="movie.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <p class="descriptmovielist">Тихое место</p>
+        </div>
+        
+        <div class="movie-list">
+          <video controls poster="images/mulan.png">
+            <source src="movie.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <p class="descriptmovielist">Трейлер 5</p>
+        </div>
+        
+        <div class="movie-list">
+          <video controls poster="images/quiet place.png">
+            <source src="movie.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <p class="descriptmovielist">Трейлер 6</p>
+        </div>
+        
+        <div class="movie-list">
+          <video controls poster="images/mulan.png">
+            <source src="movie.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <p class="descriptmovielist">Трейлер 7</p>
+        </div>
+        
+        <div class="movie-list">
+          <video controls poster="images/quiet place.png">
+            <source src="movie.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <p class="descriptmovielist">Трейлер 8</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="movie-section">
+      <h2 class="section-title">Популярные фильмы</h2>
+      <div class="separator-line"></div>
+      <ul class="categories-list">
+        <li><a href="#" class="active">Все время</a></li>
+        <li><a href="#">2020</a></li>
+        <li><a href="#">2019</a></li>
+        <li><a href="#">2018</a></li>
+        <li><a href="#">2017</a></li>
+        <li><a href="#">2016</a></li>
+        <li><a href="#">2015</a></li>
+      </ul>
+    </div>
+    <div class="movie-grid">
+      <!--ФИЛЬМ НОМЕР 1 ЭКРАНА ПОПУЛЯРНЫЕ ФИЛЬМЫ-->
+      <div class="movie-card">
+        <div class="rating-box">8.5</div>
+        <img src="images/Фото 2 сейчас в кино.png" alt="Movie 1">
+        <button class="movie-button">Карточка фильма</button>
+        <h3>Джокер</h3>
+        <p>Триллер, драма, криминал</p>
+      </div>
+      <div class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Побег из Претории</h2>
+          <span>Триллер</span> </br>
+          <p>Двое борцов за свободу отбывают срок в одной из самых строгих тюрем мира — в «Претории». Вместе с другими узниками они планируют дерзкий и опасный побег. Но придумать план — это только первый шаг. Шаг второй — реализация плана.</p>
+          <p><span>Год:</span> 1 августа 2020 г.</br>
+          <span>Режиссер:</span> Фрэнсис Аннан </br>
+          </p>
+          <button class="btn-modal"> Смотреть </button>
+          <button class="btn-modaltr"> Трейлер </button>
+        </div>
+      </div>
+      <!--ФИЛЬМ НОМЕР 2 ЭКРАНА ПОПУЛЯРНЫЕ ФИЛЬМЫ-->
+      <div class="movie-card">
+        <div class="rating-box">9.0</div>
+        <img src="images/Фото 2 экрана популярные фильмы.png" alt="Movie 2">
+        <button class="movie-button">Карточка фильма</button>
+        <h3>История игрушек 4</h3>
+        <p>Мультфильм, фэнтези, комедия, приключения ...</p>
+      </div>
+      <div class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>История игрушек 4</h2>
+          <span>Мультфильм, фэнтези, комедия, приключения, драма</span> </br>
+          <p>Двое борцов за свободу отбывают срок в одной из самых строгих тюрем мира — в «Претории». Вместе с другими узниками они планируют дерзкий и опасный побег. Но придумать план — это только первый шаг. Шаг второй — реализация плана.</p>
+          <p><span>Год:</span> 1 августа 2020 г.</br>
+          <span>Режиссер:</span> Фрэнсис Аннан </br>
+          </p>
+          <button class="btn-modal"> Смотреть </button>
+          <button class="btn-modaltr"> Трейлер </button>
+        </div>
+      </div>
+
+      <!--ФИЛЬМ НОМЕР 3 ЭКРАНА ПОПУЛЯРНЫЕ ФИЛЬМЫ-->
+      <div class="movie-card">
+        <div class="rating-box">8.7</div>
+        <img src="images/Фото 3 экрана популярные фильмы.png" alt="Movie 3">
+        <button class="movie-button">Карточка фильма</button>
+        <h3>Однажды в… Голливуде</h3>
+        <p>Драма, комедия</p>
+      </div>
+      <div class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Однажды в… Голливуде</h2>
+          <span>Драма, комедия</span> </br>
+          <p>Двое борцов за свободу отбывают срок в одной из самых строгих тюрем мира — в «Претории». Вместе с другими узниками они планируют дерзкий и опасный побег. Но придумать план — это только первый шаг. Шаг второй — реализация плана.</p>
+          <p><span>Год:</span> 1 августа 2020 г.</br>
+          <span>Режиссер:</span> Фрэнсис Аннан </br>
+          </p>
+          <button class="btn-modal"> Смотреть </button>
+          <button class="btn-modaltr"> Трейлер </button>
+        </div>
+      </div>
+      <!--ФИЛЬМ НОМЕР 4 ЭКРАНА ПОПУЛЯРНЫЕ ФИЛЬМЫ-->
+      <div class="movie-card">
+        <div class="rating-box">8.9</div>
+        <img src="images/Фото 4 экрана популярные фильмы.png" alt="Movie 4">
+        <button class="movie-button">Карточка фильма</button>
+        <h3>Солнцестояние</h3>
+        <p>Ужасы, триллер, драма</p>
+      </div>
+      <div class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Солнцестояние</h2>
+          <span>Ужасы, триллер, драма</span> </br>
+          <p>Двое борцов за свободу отбывают срок в одной из самых строгих тюрем мира — в «Претории». Вместе с другими узниками они планируют дерзкий и опасный побег. Но придумать план — это только первый шаг. Шаг второй — реализация плана.</p>
+          <p><span>Год:</span> 1 августа 2020 г.</br>
+          <span>Режиссер:</span> Фрэнсис Аннан </br>
+          </p>
+          <button class="btn-modal"> Смотреть </button>
+          <button class="btn-modaltr"> Трейлер </button>
+        </div>
+      </div>
+    </div>
+    <div class= "movie-changer">
+      <img src="images/Arrow 3.png" alt="arrow 3"> 4/15<img src="images/Arrow 2.png" alt="arrow 3">
+    </div>
+
+    <div class="movie-section">
+      <h2 class="section-title">Популярные персоны</h2>
+      <ul class="categories-list">
+        <li><a href="#">За год</a></li>
+        <li><a href="#">За месяц</a></li>
+        <li><a href="#">За неделю</a></li>
+      </ul>
+    </div>
+    <div class="person-grid">
+      <!--ПЕРСОНА 1-->
+      <div class="personal-card">
+        <div class="person-place">1-ое место</div>
+        <div class="person-describe"><h3>Квентин Тарантино</h3>
+        <p>Quentin Tarantino</p>
+        <span>57 лет</span></div>
+        <img src="images/квентин торантин.png" width="444px" height="444px" alt="Persona 1">
+        
+      </div>
+      <!--ПЕРСОНА 2-->
+      <div class="personal-card">
+        <div class="person-place">2-ое место</div>
+        <div class="person-describe"><h3>Джейсон Стейтем</h3>
+          <p>Jason Statham</p>
+          <span>52 года</span>
+        </div>
+        <img src="images/джейсон стетхам.png" width="444px" height="444px" alt="Persona 2">
+
+      </div>
+      <!--СПИСОК ПЕРСОН-->  
+      <ul class="person-list">
+        <li><a href="">Тинто Брасс</a><span>3-е место</span><p class="person-name">Tinto Brass</p> <p class="person-age">87 лет</p></li>
+        <li><a href="">Джеки Чан</a><span>4-е место</span><p class="person-name">Jackie Chan</p> <p class="person-age">66 лет</p></li>
+        <li><a href="">Том Харди</a><span>5-е место</span><p class="person-name">Tom Hardy</p> <p class="person-age">42 года</p></li>
+        <li><a href="">Акшай Кумар</a><span>6-е место</span><p class="person-name">Akshay Kumar</p> <p class="person-age">52 года</p></li>  
+      </ul>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+    <!--КОД ФАРХУНДЫ-->  <!--КОД ФАРХУНДЫ-->  <!--КОД ФАРХУНДЫ-->  <!--КОД ФАРХУНДЫ-->  <!--КОД ФАРХУНДЫ-->  <!--КОД ФАРХУНДЫ-->  <!--КОД ФАРХУНДЫ-->
+    <!--КОД ФАРХУНДЫ-->  <!--КОД ФАРХУНДЫ-->  <!--КОД ФАРХУНДЫ-->  <!--КОД ФАРХУНДЫ-->  <!--КОД ФАРХУНДЫ-->  <!--КОД ФАРХУНДЫ-->  <!--КОД ФАРХУНДЫ-->
+    <!--КОД ФАРХУНДЫ-->  <!--КОД ФАРХУНДЫ-->  <!--КОД ФАРХУНДЫ-->  <!--КОД ФАРХУНДЫ-->  <!--КОД ФАРХУНДЫ-->  <!--КОД ФАРХУНДЫ-->  <!--КОД ФАРХУНДЫ-->
+    <!--КОД ФАРХУНДЫ-->  <!--КОД ФАРХУНДЫ-->  <!--КОД ФАРХУНДЫ-->  <!--КОД ФАРХУНДЫ-->  <!--КОД ФАРХУНДЫ-->  <!--КОД ФАРХУНДЫ-->  <!--КОД ФАРХУНДЫ-->
+    <section class="news-section">
+      <div class="news-header">
+        <h2>Последние новости</h2>
+        <a href="#">Все новости → </a>
+      </div>
+
+      <div class="container">
+        <div class="main-news">
+          <img src="pictures/bond.png" alt="Главная новость" />
+          <div class="news-conttent">
+            <p class="date">15 Апр 2020</p>
+            <h3>Не время умирать. Перенос релиза фильма</h3>
+            <p>
+              Но действия представителей оппозиции в равной степени
+              предоставлены сами себе.В рамках спецификации современных
+              стандартов, стремящиеся вытеснить традиционнон
+              производство,нанотехнологии указаны как преетенденты на роль
+              ключевых факторов.
+            </p>
+          </div>
+        </div>
+        <div class="side-news">
+          <div class="news-item">
+            <img src="pictures/соник.png" alt="Новость 1" />
+            <p class="date">15 Апр 2020</p>
+            <p>Как изменили Соника с последнего анонса</p>
+          </div>
+          <div class="news-item">
+            <img src="pictures/bond.png" alt="Новость 2" />
+
+          </div>
+          <div class="news-item">
+            <img src="pictures/мужик в очках.png" alt="Новость 2" />
+            <p class="date">15 Апр 2020</p>
+            <p>От этой новости вы будете шокированы до завтра</p>
+          </div>
+          <div class="news-item">
+            <img src="pictures/парень и девушка.png" alt="Новость 3" />
+            <p class="date">13 Апр 2020</p>
+            <p>Вот это, конечно, да!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <div class="container2">
+      <div class="movies">
+          <div class="movie">
+              <div class="movie__cover-inner">
+                  <img src="pictures/escape.png" class="movie-cover" alt="">
+                  <div class="movie_cover--darkened"></div>
+              </div>
+              <div class="movie-info">
+                  <div class="title">Побег из Претории</div>
+                  <div class="date">14 мая 2020 в Росии</div>
+              </div>
+          </div>
+      </div>
+
+
+      <div class="movies">
+          <div class="movie">
+              <div class="movie__cover-inner">
+                  <img src="pictures/адиос.png" class="movie-cover" alt="">
+                  <div class="movie_cover--darkened"></div>
+              </div>
+              <div class="movie-info">
+                  <div class="title">Прощай</div>
+                  <div class="date">14 мая 2020 в Росии</div>
+              </div>
+          </div>
+      </div>
+
+      <div class="movies">
+          <div class="movie">
+              <div class="movie__cover-inner">
+                  <img src="pictures/дружить по р.png" class="movie-cover" alt="">
+                  <div class="movie_cover--darkened"></div>
+              </div>
+              <div class="movie-info">
+                  <div class="title">Дружить по-русски!</div>
+                  <div class="date">21 мая 2020 в Росии</div>
+              </div>
+          </div>
+      </div>
+
+      <div class="movies">
+          <div class="movie">
+              <div class="movie__cover-inner">
+                  <img src="pictures/приди ко мне.png" class="movie-cover" alt="">
+                  <div class="movie_cover--darkened"></div>
+              </div>
+              <div class="movie-info">
+                  <div class="title">Приди ко мне</div>
+                  <div class="date">21 мая 2020 в Росии</div>
+              </div>
+          </div>
+      </div>
+
+
+
+    </div>
+
+    <div class="box-office-container">
+      <!-- Заголовок и даты -->
+      <div class="box-office-header">
+          <h2>Кассовые сборы</h2>
+          <span>13 марта – 15 марта</span>
+      </div>
+
+
+      <div class="box-office-nav">
+          <span>Россия</span>
+          <span class="active">Весь мир</span>
+          <span>США и Канада</span>
+      </div>
+
+
+      <div class="box-office">
+          <div class="second-movie">
+              <img src="pictures/вин дизель.png" alt="Бладшот">
+
+              <div class="text">
+              <h4>1. Бладшот</h4>
+              <p>$13 млн</p>
+              <h5>$15.1 млн за 4 недели</h5>
+          </div>
+          </div>
+          <div class="second-movie">
+              <img src="pictures/мульт вперед.png"  alt="Вперед">
+
+              <div class="text">
+              <h4>2.Вперёд</h4>
+              <p>$6.8 млн</p>
+              <h5>$41.4 млн за 4 недели<h5>
+              </div>
+          </div>
+          <div class="second-movie"> 
+              <img src="pictures/человек-невидимка.png"  alt="Человек-невидимка">
+              <div class="text">
+              <h4>3. Человек-невидимка</h4>
+              <p>$13 млн</p>
+              <h5>$58.3 млн за 3 недели</h5>
+          </div>
+          </div>
+          <div class="second-movie">
+              <img src="pictures/соник.png"  alt="Соник в кино">
+
+              <div class="text">
+              <h4>4. Соник в кино </h4>
+              <p>$2.9 млн</p>
+              <h5>$15.1 млн за 4 недели</h5>
+              </div>
+          </div>
+          <div class="second-movie">
+              <img src="pictures/джентельмены.png"  alt="Джентльмены">
+              <div class="text">
+              <h4>5. Джентельмены</h4>
+              <p>$1.8 млн</p>
+              <h5>$78.7 млн за 11 недели</h5>
+          </div>
+          </div>
+      </div>
+    </div>
+
+
+                
+
+                <section class="newsletter-section">
+                  <h2>Подпишитесь на E-mail рассылку</h2>
+                  <p>
+                    Если хотите быть в курсе последних новостей и новинок кино – заполните
+                    форму ниже и оформите бесплатную E-mail рассылку!
+                  </p>
+
+                <form class="newsletter-form" action="#" method="post">
+                  <input type="email" name="email" placeholder="Введите свой E-mail адрес" required />
+                  <button type="submit">Подписаться</button>
+                  <label class="privacy-label">
+                    <input type="checkbox" required />
+                    Соглашаюсь на условия 
+                    <a href="#">политики конфиденциальности</a>
+                  </label>
+                </form>
+                </section>
+
+                <footer>
+                    <div class="footer-social">
+
+                        <a href="#"><img src="pictures/icons8-vk-48.png" alt="instagram"></a>
+                        <a href="#"><img src="pictures/icon-instagram.svg" alt="instagram"></a>
+                        <a href="#"><img src="pictures/icon-facebook.svg" alt="instagram"></a>
+                        <a href="#"><img src="pictures/icon-twitter.svg" alt="instagram"></a>
+                        <a href="#"><img src="pictures/youtube-icon.svg" alt="instagram"></a>
+                    </div>
+
+                        <nav class="footer-nav">
+                        <a href="#">Афиша</a>
+                        <a href="#">Новости</a>
+                        <a href="#">Персоны</a>
+                        <a href="#">Рейтинги</a>
+                        <a href="#">Рецензии</a>
+                        <a href="#">Каталог фильмов</a>
+
+                    </nav>
+                   <div class="footer-bottom">
+                    © 2020 Киноarea. Все права защищены.
+                   </div>
+                   <div class="footer-bottom">
+                    <a href="#">Политика конфиденциальности</a>
+                   </div>
+                </footer>
+
+    
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>
